@@ -64,10 +64,10 @@ button{font:inherit;color:inherit}
 .play-icon{width:45px;height:45px;border-radius:50%;border:1px solid #646a66;display:grid;place-items:center;font-size:14px;color:#d5d8d5;transition:.22s}
 .intro-link:hover .play-icon{border-color:var(--orange);color:var(--orange)}
 .hero-art{position:absolute;z-index:1;top:-120px;right:-64px;width:764px;height:660px;pointer-events:none}
-.hero-art img{display:block;width:100%;height:100%;object-fit:fill}
+.hero-art .art-image-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr));width:100%;height:100%;overflow:hidden}.hero-art .art-image-grid img{display:block;width:100%;height:100%;min-width:0;min-height:0;object-fit:fill}
 .scroll-cue{position:absolute;z-index:4;right:-91px;bottom:-4px;display:flex;align-items:center;gap:17px;writing-mode:vertical-rl;color:#8e9490;font-size:11px;letter-spacing:.06em}
 .scroll-cue:after{content:"";height:55px;width:1px;background:linear-gradient(#555b57,transparent)}
-.feature-row{height:143px;position:relative;margin:0 0 47px;z-index:5}
+.feature-row{height:143px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;position:relative;margin:0 0 47px;z-index:5}.feature-shot{display:block;min-width:0;height:143px;overflow:hidden;border-radius:25px;transition:transform .25s}.feature-shot img{display:block;width:100%;height:100%;object-fit:fill}.feature-shot:hover{transform:translateY(-4px)}
 .feature-row>img{width:100%;height:100%;object-fit:fill;display:block}
 .feature-hotspots{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr)}
 .feature-hotspots a{display:block;border-radius:28px;outline-offset:-3px}
@@ -231,16 +231,13 @@ button{font:inherit;color:inherit}
      <a class="intro-link" href="#about"><span class="play-icon">▶</span><span data-i18n="watchIntro">Watch Intro</span></a>
     </div>
    </div>
-   <div class="hero-art"><img src="assets/hero-architecture.webp" alt="Layered transparent glass data architecture with orange light and floating information panels"></div>
+   <div class="hero-art"><div class="art-image-grid" aria-hidden="true"><img src="assets/hero-00.webp" alt="" loading="eager"><img src="assets/hero-01.webp" alt="" loading="eager"><img src="assets/hero-10.webp" alt="" loading="eager"><img src="assets/hero-11.webp" alt="" loading="eager"><img src="assets/hero-20.webp" alt="" loading="eager"><img src="assets/hero-21.webp" alt="" loading="eager"><img src="assets/hero-30.webp" alt="" loading="eager"><img src="assets/hero-31.webp" alt="" loading="eager"></div></div>
    <div class="scroll-cue" data-i18n="scrollCue">Scroll Down</div>
   </section>
   <div class="feature-row" aria-label="Featured sections">
-   <img src="assets/feature-cards.webp" alt="Research, Projects and Education featured sections">
-   <div class="feature-hotspots">
-    <a href="#research" aria-label="Explore Research"></a>
-    <a href="#projects" aria-label="Explore Projects"></a>
-    <a href="#education" aria-label="Explore Education"></a>
-   </div>
+   <a class="feature-shot" href="#research"><img src="assets/feature-1.webp" alt="Research"></a>
+   <a class="feature-shot" href="#projects"><img src="assets/feature-2.webp" alt="Projects"></a>
+   <a class="feature-shot" href="#education"><img src="assets/feature-3.webp" alt="Education"></a>
   </div>
   <div class="feature-mobile">
    <a href="#research"><span class="mini-visual">⌘</span><span><h3 data-i18n="researchCard">Research</h3><p data-i18n="researchCardDesc">Exploring the frontiers of AI and Data Science.</p></span><span class="mini-arrow">↗</span></a>
